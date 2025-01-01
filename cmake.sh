@@ -1,0 +1,30 @@
+#!/bin/bash
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+      -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D INSTALL_PYTHON_EXAMPLES=ON \
+      -D INSTALL_C_EXAMPLES=OFF \
+      -D OPENCV_ENABLE_NONFREE=ON \
+      -D WITH_CUDA=ON \
+      -D WITH_CUDNN=ON \
+      -D OPENCV_DNN_CUDA=ON \
+      -D ENABLE_FAST_MATH=1 \
+      -D CUDA_FAST_MATH=1 \
+      -D CUDA_ARCH_BIN=8.9 \
+      -D WITH_CUBLAS=1 \
+      -D OPENCV_EXTRA_MODULES_PATH=/home/drank/dev/cv/opencv_contrib/modules \
+      -D HAVE_opencv_python3=ON \
+      -D WITH_GTK=ON \
+      -D WITH_GTK_2_X=ON \
+      -D BUILD_EXAMPLES=ON \
+      -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-12.6/bin \
+      -D WITH_FFMPEG_LIBSWRESAMPLE=ON \
+      ..
+      #-D CMAKE_C_COMPILER=/usr/local/gcc/gcc-12/bin/gcc \
+      #-D CMAKE_CXX_COMPILER=/usr/local/gcc/gcc-12/bin/g++ \
+      #-D WITH_FFMPEG=ON \
+      #-D CUDNN_INCLUDE_DIR=/home/drank/miniforge3/envs/opencv/include \
+      #-D CUDNN_LIBRARY=/home/drank/miniforge3/envs/opencv/lib \
+      #-D CUDA_NVCC_FLAGS=-allow-unsupported-compiler \
+      #--trace-source=modules/videoio/cmake/detect_ffmpeg.cmake \
+      #-D PYTHON_EXECUTABLE=~/miniforge2/envs/cv/bin/python \
+      #-D BUILD_opencv_world=OFF \
